@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <div class="particulas"></div>
+    <nav class="navegacao">
+      <ul class="menu">
+        <li>
+          <a href="#inicio" class="menu-link">Início</a>
+        </li>
+        <li>
+          <a href="#sobre" class="menu-link">Sobre</a>
+        </li>
+        <li>
+          <a href="#projetos" class="menu-link">Projetos</a>
+        </li>
+
+        <li>
+          <a href="#contatos" class="menu-link">Contatos</a>
+        </li>
+      </ul>
+    </nav>
+    
+
+    <main id="inicio" class="cabecalho">
+     
+        <img src="img/Diego.jpg" alt="" class="foto-perfil" />
+        <h1>Diego de Jesus</h1>
+        <p class="cabecalho-sub-titulo" >Programador Front End</p>
+      
+    </main>
+
+    <section id="sobre" class="sobre">
+      <h2 class="sobre-titulo">Sobre Mim</h2>
+      <div class="sobre-caixa">
+        <p class="sobre-paragrafo">
+          Olá, meu nome é Diego de Jesus, sou um programador 
+          apaixonado por criar experiências digitais incríveis. Tenho
+          experiência em HTML, CSS, JavaScript, Python e SQL estou sempre aprendendo novas
+          tecnologias para aprimorar minhas habilidades.
+        </p>
+      </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <a href="https://projetofutebol.onrender.com/index.html" target="_blank">
+                <img class="projetos-imagem"  src="./img/projeto1.png" alt="">
+                </a>
+                <div class="caixa-textos-projetos">
+                <h3 class="info-projetos">Projeto Futebol</h3>
+                <p class="paragrafo-projetos">Site de olheiro de Futebol que treina e vende jogadores para grandes clubes</p>
+            </div>
+              </div>
+
+             <div class="projetos-card">
+              <a href="https://stellar-monstera-3440a9.netlify.app/" target="_blank">  
+              <img class="projetos-imagem"  src="./img/projeto2.png" alt="">
+              </a>
+                <div class="caixa-textos-projetos">
+                <h3 class="info-projetos">Caluladora de Lucro para Shoope</h3>
+                <p class="paragrafo-projetos">Site que mostra o valor ideal para se vender na Shopee de acordo com que o vendedor quer ter de Lucro.</p>
+              </div>
+              </div>
+
+             <div class="projetos-card">
+              <a href="https://memori-game-soccer.netlify.app/" target="_blank"> 
+              <img class="projetos-imagem"  src="./img/projeto3.png" alt="">
+              </a> 
+                <div class="caixa-textos-projetos">
+                <h3 class="info-projetos">Caluladora de Lucro para Shoope</h3>
+                <p class="paragrafo-projetos">Site que mostra o valor ideal para se vender na Shopee de acordo com que o vendedor quer ter de Lucro.</p>
+            </div>
+              </div>
+
+              
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+      <h2 class="contatos-titulo">Entre em contato</h2>
+
+      <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+        <div class="grupo-form">
+            <input placeholder="Nome" id="nome" class="campo-form">
+        </div>
+
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" id="mensagem" rows="6"></textarea>
+
+            </div>
+        </div>
+        <button type="submit" class="botao-form">Enviar WhatSapp</button>
+      </form>
+    </section>
+
+    <script>
+
+    function enviarWhats(event) {
+      
+
+
+      const nome = document.getElementById("nome").value;
+      const mensagem = document.getElementById("mensagem").value;
+      const telefone = "5521994780962"
+
+      const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+      const msgFormatada = encodeURIComponent(texto);
+
+      const url = `https://wa.me/${telefone}?text= ${msgFormatada}`;
+
+      console.log(url);
+
+      window.open(url, "_blank");
+
+    }
+
+
+   
+
+    </script>
+  </body>
+</html>
